@@ -1,5 +1,8 @@
 package com.santana.extractor;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class LineExtractor {
 
 	public String extractPhoneNumber(String dsParams) {
