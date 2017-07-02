@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 public class ConnectionFactory {
 	public Connection getOracleConnection() {
 		try {
-			return DriverManager.getConnection("jdbc:oracle:thin:@cd.czmbbunm7gyb.sa-east-1.rds.amazonaws.com:1521:ORLC","CD","CD");
+			return DriverManager.getConnection("jdbc:oracle:thin:@cd.czmbbunm7gyb.sa-east-1.rds.amazonaws.com:1521:ORCL","CD","CD");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
