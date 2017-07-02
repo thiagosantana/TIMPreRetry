@@ -27,6 +27,6 @@ public class DataUtilTest {
 	public void sub3DaysWhenMonthChanges() {
 		LocalDate myBirth = LocalDate.of(1984, Month.JANUARY, 1);
 		dataUtil = new DataUtil(myBirth);
-		assertEquals("1983-12-30", dataUtil.subDays(3));
+		assertEquals("1983-12-29", dataUtil.subDays(3));
 	}
 }

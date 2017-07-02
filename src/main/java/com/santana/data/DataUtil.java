@@ -10,7 +10,7 @@ public class DataUtil {
 
 	public DataUtil(LocalDate currentDate) {
 		this.currentDate = currentDate;
-		formatter = DateTimeFormatter.ofPattern("YYYY-MM-DD");
+		formatter = DateTimeFormatter.ofPattern("YYYY-MM-dd");
 	}
 
 	public String subDays(int days) {
