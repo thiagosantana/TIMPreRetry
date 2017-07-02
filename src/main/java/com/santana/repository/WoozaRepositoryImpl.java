@@ -12,14 +12,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.santana.factory.ConnectionFactory;
+import com.santana.repository.contract.WoozaRepository;
 import com.santana.vo.FailedActivationVO;
 
 @Component
-public class WoozaRepository {
+public class WoozaRepositoryImpl implements WoozaRepository{
 	private ConnectionFactory factory;
-	private static final Logger log = LoggerFactory.getLogger(WoozaRepository.class);
+	private static final Logger log = LoggerFactory.getLogger(WoozaRepositoryImpl.class);
 	
-	public WoozaRepository(ConnectionFactory factory) {
+	public WoozaRepositoryImpl(ConnectionFactory factory) {
 		this.factory = factory;
 	}
 	
@@ -34,7 +35,6 @@ public class WoozaRepository {
 			stmt = conn.createStatement();
 			result = stmt.executeQuery(query);
 			while(result.next()) {
-				//log.info(result.getString(1));
 				FailedActivationVO vo = new FailedActivationVO();
 				vo.setDS_LOG(result.getString(1));
 				vo.setDS_PARAMS(result.getString(2));

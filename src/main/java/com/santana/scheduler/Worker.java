@@ -9,7 +9,8 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import com.santana.data.DataUtil;
-import com.santana.repository.WoozaRepository;
+import com.santana.repository.WoozaRepositoryImpl;
+import com.santana.repository.contract.WoozaRepository;
 import com.santana.vo.FailedActivationVO;
 
 
@@ -31,6 +32,6 @@ public class Worker {
 		log.info("Start.");
 		dataUTil.setCurrentDate(LocalDate.now());
 		List<FailedActivationVO> failedCalls = woozaRepo.selectFailedActivationsFrom(dataUTil.subtractDays(DAYS_BEHIND));
-		log.info(failedCalls.size()+"");
+		log.info("Errors returned");
 	}
 }
